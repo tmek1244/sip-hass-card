@@ -301,7 +301,7 @@ class SipJsCard extends LitElement {
                 overflow: hidden;
                 z-index: 1;
             }
-            
+
             .popup {
                 display: flex;
                 flex-wrap: wrap;
@@ -354,7 +354,7 @@ class SipJsCard extends LitElement {
                             <span slot="actionItems" id="time" class="header-text">${this.timerElement}</span>
                         </ha-header-bar>
                     </div>
-                    <div class="content"> 
+                    <div class="content">
                         ${this.currentCamera !== undefined ? html`
                             <ha-camera-stream
                                 allow-exoplayer
@@ -803,6 +803,7 @@ class SipJsCard extends LitElement {
 
             this.sipPhoneSession.on("failed", (event: EndEvent) =>{
                 console.log('Call failed. Originator: ' + event.originator);
+                console.log(event);
                 this.endCall();
             });
 
